@@ -13,6 +13,9 @@ var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var html2js = require('html2js-browserify')
 var replace = require('gulp-replace');
+var pathmodify = require('pathmodify');
+var aliasify = require('aliasify')
+const path = require('path')
 
 var devServer = false
 
@@ -22,7 +25,8 @@ function makeBundle(){
     if(!b){
         b = browserify({
             entries: 'src/entry/js/index.js',
-            debug: devServer
+            debug: devServer,
+            extensions: ['es6'],
         })
             .transform(html2js)
             .transform(babelify)

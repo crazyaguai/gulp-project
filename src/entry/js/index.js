@@ -1,7 +1,5 @@
 import '@babel/polyfill'
-
 import Vue from '../../common/vue.esm'
-// import Vue from 'vue/dist/vue.esm'
 // import Vue from 'vue'
 
 import HelloWorld from '../../module/helloworld/helloworld'

@@ -1,5 +1,4 @@
 import Vue from '../../common/vue.esm'
-// import Vue from 'vue/dist/vue.esm'
 // import Vue from 'vue'
 import tpl from './helloworld.html'
 
