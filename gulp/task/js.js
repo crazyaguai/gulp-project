@@ -11,6 +11,7 @@ import sourcemaps from 'gulp-sourcemaps';
 var source = require('vinyl-source-stream')
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
+var html2js = require('html2js-browserify')
 var replace = require('gulp-replace');
 
 var devServer = false
@@ -23,6 +24,7 @@ function makeBundle(){
             entries: 'src/entry/js/index.js',
             debug: devServer
         })
+            .transform(html2js)
             .transform(babelify)
             .on('error', function (err) { console.error(err); })
     }
