@@ -17,7 +17,7 @@ function scss() {
         .pipe(gulpif(devServer,sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(replace('../../', '../'))
+        .pipe(replace('@img', '../img'))
         .pipe(gulpif(devServer,sourcemaps.write()))
         .pipe(gulp.dest('./dev/css'));
 }
@@ -26,7 +26,7 @@ gulp.task('scss',scss)
 
 gulp.task('scss:dev', function () {
     devServer = true
-    gulp.watch('./src/entry/scss/*.scss', function (event) {
+    gulp.watch(['./src/entry/scss/*.scss','./src/module/*/*.scss'], function (event) {
         return scss(event.path).pipe(global.browserSync.reload({stream: true}));
     });
     return scss()

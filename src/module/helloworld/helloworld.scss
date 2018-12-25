@@ -1,4 +1,12 @@
 .container{
     font-size: 24px;
     color: #afafaf;
+    text-align: center;
+    .img{
+        background: url("@img/下载.jpeg");
+        margin: auto;
+        width: 349px;
+        height: 144px;
+        background-size: 349px auto;
+    }
 }

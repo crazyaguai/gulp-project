@@ -7,7 +7,8 @@ export default Vue.extend({
     template: tpl,
     data(){
         return {
-            data: 'HelloWorld'
+            data: 'HelloWorld',
+            imgUrl: '@img/下载.jpeg'
         }
     },
 })

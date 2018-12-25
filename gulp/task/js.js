@@ -40,7 +40,7 @@ function bundle(){
         .bundle()
         .pipe(source('index.js'))
         .pipe(buffer())
-        .pipe(replace('../../', '../'))
+        .pipe(replace('@img', 'img'))
         .pipe(gulp.dest('dev/js'))
         .pipe(gulpif(devServer,global.browserSync.reload({stream: true})))
 }
